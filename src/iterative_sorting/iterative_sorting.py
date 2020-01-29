@@ -1,5 +1,5 @@
 # TO-DO: Complete the selection_sort() function below 
-def selection_sort( arr ):
+def selection_sort( arr ): #insertion sort algorithm 
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
@@ -20,7 +20,7 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    
     return arr
 
 
