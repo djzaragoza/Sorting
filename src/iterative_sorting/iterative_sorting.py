@@ -1,12 +1,15 @@
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ): #insertion sort algorithm 
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+    for i in range(0, len(arr) - 1): #traversing thru the array
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
-             
+    min_idx = i #
+    for j in range(i+1, len(arr)):
+        if A[min_idx] > A[j]:
+            min_idx = j
 
 
 
