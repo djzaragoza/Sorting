@@ -30,7 +30,7 @@ def bubble_sort( arr ):
 
 arr = [75, 43, 12, 84, 5, 18]
 
-iterative_sort(arr)
+bubble_sort(arr)
 
 print("Sorted array is:")
 for i in range(len(arr)):
