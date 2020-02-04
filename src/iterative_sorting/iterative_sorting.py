@@ -11,13 +11,8 @@ def selection_sort( arr ): #insertion sort algorithm
         if A[min_idx] > A[j]:
             min_idx = j
 
-
-
         # TO-DO: swap
-
-
-
-
+        
     return arr
 
 
