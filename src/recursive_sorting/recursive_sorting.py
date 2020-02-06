@@ -2,44 +2,51 @@
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
+   
     # TO-DO
     
-    x = 0
-    y = 0
+    arr_a_index=0
+    arr_b_index=0
     
     for i in range(0, len(merged_arr)):
-        if x > len(arrA) - 1:
-            merged_arr[i] = arrB[y]
-            y =+ 1
-        elif y > len(arrB) - 1:
-            merged_arr[i] = arrA[x]
-            x += 1
-        elif arrA[x] < arrB[y]:
-            merged_arr[i] = arrA[x]
-            x += 1
-        else:
-            merged_arr[i] = arrB[y]
-            y += 1
-    
+        if arr_a_index == len(arrA):
+            merged_arr[i]=arrB[arr_b_index]
+            arr_b_index+=1
+        elif arr_b_index==len(arrB):
+            merged_arr[i]=arrA[arr_a_index]
+            arr_a_index+=1
+        elif arrA[arr_a_index] < arrB[arr_b_index]:
+            merged_arr[i]=arrA[arr_a_index]
+            arr_a_index+=1
+        elif arrA[arr_a_index] > arrB[arr_b_index]:
+            merged_arr[i]=arrB[arr_b_index]
+            arr_b_index+=1
+            
+            
     return merged_arr
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
-    if len(arr) > 1:
-        index = len(arr) // 2
-        left = arr[0 : index]
-        right = arr[index : 1]
-        
-        merge_left = merge_sort(left)
-        merge_right = merge_sort(right)
-        
-        merged = merge(merge_left, merge_right)
-        
-        return merged
-    else: 
+    if len(arr) < 2:
         return arr
+    else:
+        A = arr[:len(arr)//2]
+        B = arr[len(arr)//2:]
+        return merge(merge_sort(A), merge_sort(B))
+    
+    # if len(A) == 1:
+    #     return A
+    # elif len(B) == 1:
+    #     return B
+    # else:
+    #     merge_sort(A)
+    #     merge_sort(B)
+
+    # Recursively divide the array
+    
+    return arr
 
 
 # STRETCH: implement an in-place merge sort algorithm
